@@ -2,16 +2,41 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <link rel="shortcut icon" href="favicon.ico" />
     <meta name="viewport" content="width=device-width" />
-    <title>What does Yoda say?</title>
-    <link rel="stylesheet" href="style.css" title="" type="all" />  
-
+    <title>Ask Yoda!</title>
+    <link rel="stylesheet" href="style.css"/>  
   </head>
   <body>
-    <h1>Yoda Stuff</h1>
+    <h1>Ask Yoda!</h1>
+
+    <h2>
+      Give him a yes or no question..
+      <br>
+      ..he'll give you a <span class="blue">force-filled</span> answer!
+    </h2>
+
+    <div id="container">
+      <img src="yoda-img.png" alt="Jedi Master Yoda" />
+      <form>
+        <input type="text"   name="speech" id="speech" placeholder="Questions, do you have?"/>
+        <input type="button" name="submit" id="submit" value="Submit" />
+      </form>
+    </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+    <script 
+      src="https://code.jquery.com/jquery-3.1.1.js" 
+      integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" 
+      crossorigin="anonymous">
+    </script>
+
+    <script 
+      src="jquery.voicerss-tts.min.js" 
+      type="text/javascript" 
+      charset="utf-8"> 
+    </script>
+
     <script src="yoda.js" type="text/javascript" charset="utf-8"> </script>
     <script src="speech.js" type="text/javascript" charset="utf-8"> </script>
     <script src="main.js" type="text/javascript" charset="utf-8"> </script>
