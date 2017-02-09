@@ -19,9 +19,10 @@ $("#submit").on("click", function() {
   }
   else {
     $.getJSON("https://8ball.delegator.com/magic/JSON/" +
-              encodeURIComponent(question), 
+              encodeURIComponent(question),
               function(data) {
       answer = data.magic.answer + "!";
+      console.log("This is the answer: "+ answer);
     })
     .done(function() {
       $.speech({
