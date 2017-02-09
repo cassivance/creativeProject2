@@ -1,6 +1,7 @@
 // run dat code
 $("#submit").on("click", function() {
-  var yodaSpeech = generateYodaSpeech($("#speech").val());
+  //var yodaSpeech = generateYodaSpeech($("#speech").val());
+  var yodaSpeech = "";
 
   var key      = "ad7dfe8c9d5e4e42946ddca02995db54";
   var question = $("#speech").val();
@@ -23,18 +24,20 @@ $("#submit").on("click", function() {
               function(data) {
       answer = data.magic.answer + "!";
       console.log("This is the answer: "+ answer);
-    })
-    .done(function() {
-      $.speech({
-          key  : key                  ,
-          src  : answer               ,
-          hl   : 'en-us'              ,
-          r    : -2                   ,
-          c    : 'mp3'                ,
-          f    : '44khz_16bit_stereo' ,
-          ssml : false
-      });
+      yodaSpeech = generateYodaSpeech(answer);
+      console.log(yodaSpeech);
     });
+    // .done(function() {
+    //   $.speech({
+    //       key  : key                  ,
+    //       src  : yodaSpeech           ,
+    //       hl   : 'en-us'              ,
+    //       r    : -2                   ,
+    //       c    : 'mp3'                ,
+    //       f    : '44khz_16bit_stereo' ,
+    //       ssml : false
+    //   });
+    // });
   }
   $("#speech").val("").focus();
 });
